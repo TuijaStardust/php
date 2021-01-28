@@ -97,7 +97,7 @@ $results = mysqli_query($connection, $sql);
     <p>5.) Check for errors and/or fetch the data; === to make sure it only applies to correct type of false response</p>
 <pre>
 if ($result === false) {
-    echo mysqli_error($connection);
+    echo mysqli_error($connection); //<- Error message is essential help to locate the error...
 } else { 
     // fetch result set
     $articles = mysqli_fetch_all($results, MYSQLI_ASSOC); 
@@ -131,6 +131,20 @@ if ($result === false) {
             $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
         }
         ?>
+         
+
+        <?php if (empty($articles)): ?>
+            <p>Sorry, there are no articles available.</p>
+        <?php else: ?>
+        <ul>
+            <li>
+                <?php foreach ($articles as $article): ?>
+                    <h2><?php $article['title']; ?></h2>
+                    <p><?php $article['content']; ?></p>
+                <?php endforeach; ?>
+            </li>
+        </ul>
+        <?php endif; ?>
     
     <p></p>
     <p></p>
