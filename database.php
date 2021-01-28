@@ -71,7 +71,7 @@ $db_pass = "password";
 </pre>
     <p>2.) Call the mysqli_connect() -method passing the data that connect the database and returns a variable that represents the connection to the database server.</p>
 <pre>
-$connection = mysqli_connect($db_host, $db_user $db_pass, $db_name);    
+$connection = mysqli_connect($db_host, $db_user $db_pass, $db_name); // <- In this order!   
 </pre>
     <p>Check that the connection has succeeded...</p>
 <pre>
@@ -92,18 +92,46 @@ $sql = "SELECT *
     <p>4.) Send the SQL query to database</p>
     <p>Use mysqli_query()</p>
 <pre>
-$results = mysqli_query($conn, $sql);
+$results = mysqli_query($connection, $sql);
 </pre>
     <p>5.) Check for errors and/or fetch the data; === to make sure it only applies to correct type of false response</p>
 <pre>
 if ($result === false) {
-    echo mysqli_error($conn);
+    echo mysqli_error($connection);
 } else { 
     // fetch result set
     $articles = mysqli_fetch_all($results, MYSQLI_ASSOC); 
 }
 </pre>
     <p>MYSQLI_ASSOC turns the resulting array into an associative array</p>
+    
+    <hr>
+
+        <?php
+        
+        // Import the Database info
+        require "secret.php";
+
+        $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+        if (mysqli_connect_error()) {
+            echo mysqli_connect_error();
+            exit;
+        }
+
+        echo "Connected to the database succefully.";
+
+        $sql = "SELECT * FROM php_dummy_one ORDER BY title;";
+
+        $results = mysqli_query($connection, $sql);
+
+        if ($results === false) {
+            echo mysqli_error($connection);
+        }   else {
+            $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+        }
+        ?>
+    
     <p></p>
     <p></p>
 </body>
