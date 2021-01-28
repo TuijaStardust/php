@@ -44,10 +44,10 @@
             <p>Sorry, there are no articles available.</p>
         <?php else: ?>
             <div>
-                <?php foreach ($articles as $article) {
-                    echo "<h2>". $article['title']. "</h2>"; 
-                    echo "<p>". $article['content'] ."</p>";
-                }?>
+                <?php foreach ($articles as $article): ?>
+                    <h2> <?= $article['title'] ?></h2>; 
+                    <p> <?= $article['content'] ?></p>;
+                <?php endforeach; ?>
             
             </div>
         <?php endif; ?> 
