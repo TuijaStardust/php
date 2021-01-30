@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Loops</title>
-</head>
-<body>
-    <h1>PHP Loops</h1>
-    <p class="date">21-01-24 / Notes by Tuija Stardust</p>
+<?php
+ 
+ $pagetitle = "PHP - Loops";
+ $creation_date = "2021-01-24";
+ $edit_date = "2021-01-30";
+ 
+ require('includes/header.php');
+         
+ ?> 
 
     <p>In order to print out an array of data, loops are a convenient solution.</p>
     <p>Loops are "control structures"</p>
 
-    <h2>foreach Loop</h2>
+    <h2>foreach loop</h2>
     <p>&#x279C Runs code for each element of an array regardless of how many elements there are.</p>
     <p>&#x279C <a href="https://www.php.net/manual/en/control-structures.foreach.php">PHP Manual - Foreach</a></p>
     <h3>Syntax</h3>
@@ -118,5 +117,4 @@ for ($i = 1; $i <= 10; $i++) {
         }
         ?>
 
-</body>
-</html>
+<?php require('includes/footer.php'); ?>

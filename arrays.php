@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP arrays</title>
-</head>
-<body>
-        <?php
+ <?php
+ 
+$pagetitle = "PHP - Arrays";
+$creation_date = "2021-01-24";
+$edit_date = "2021-01-30";
 
-        echo "<h1>PHP Arrays</h1>";
-
-        ?>
-        <p class="date">21-01-24 / Notes by Tuija Stardust</p>
+require('includes/header.php');
+        
+?>        
 
     <p>An array is a list of other values.</p>
     <h2>Syntax</h2>
@@ -78,5 +73,7 @@ $articles = [
             var_dump($articles[1]["title"]);
             ?>
 
-</body>
-</html>
+<?php 
+
+require('includes/footer.php')
+?>

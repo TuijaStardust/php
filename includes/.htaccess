@@ -1,0 +1,2 @@
+#Deny access from all to server
+Deny from all 

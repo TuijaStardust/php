@@ -1,58 +1,41 @@
 <?php
         
-        // Import the Database info
-        require "secret.php";
+// Import the Database connection
+require "includes/database_connect.php";
 
-        $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-        mysqli_set_charset($connection, "utf8");
+$sql = "SELECT * 
+        FROM php_dummy_one 
+        ORDER BY published_at;";
 
-        if (mysqli_connect_error()) {
-            echo mysqli_connect_error();
-            exit;
-        }
+$results = mysqli_query($connection, $sql);
 
-        $sql = "SELECT * 
-                FROM php_dummy_one 
-                ORDER BY published_at;";
+if ($results === false) {
+    echo mysqli_error($connection);
+}   else {
+    $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+}
 
-        $results = mysqli_query($connection, $sql);
+$pagetitle = "Blog Mockup";
+$creation_date = "2021-01-24";
+$edit_date = "2021-01-30";
 
-        if ($results === false) {
-            echo mysqli_error($connection);
-        }   else {
-            $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-        }
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Blog Mockup</title>
-</head>
-<body>
-    
-    <header>
-        <h1>PHP Blog Mockup</h1>
-    </header>
-
-    <main>
+require('includes/header.php');
+        
+?> 
 
         <?php if (empty($articles)): ?>
             <p>Sorry, there are no articles available.</p>
         <?php else: ?>
             <div>
+                <ul>
                 <?php foreach ($articles as $article): ?>
-                    <h2> <?= $article['title'] ?></h2>; 
-                    <p> <?= $article['content'] ?></p>;
+                    <li>
+                        <h2><a href="article.php?id=<?= $article['id']; ?>"> <?= $article['title']; ?></a></h2> 
+                        <p> <?= $article['content']; ?></p>
+                    </li>
                 <?php endforeach; ?>
-            
+                </ul>
             </div>
         <?php endif; ?> 
 
-    </main>
-
-</body>
-</html>
+<?php require('includes/footer.php'); ?>
