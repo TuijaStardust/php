@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Elementary</title>
-</head>
-<body>
-
-
-        <?php
-
-            echo "<h1>PHP basics</h1>"; 
-
-        ?>
-    <p class="date">21-01-24 / Notes by Tuija Stardust</p>
-
+<?php
+ 
+ $pagetitle = "PHP - Elementary";
+ $creation_date = "2021-01-24";
+ $edit_date = "2021-01-30";
+ 
+ require('includes/header.php');
+         
+ ?>
 
     <p>*Tip: To escape put a \ infront of the escaped character*</p>
 
@@ -107,5 +99,4 @@
     <p>|| &#x279C or </p>
     <p>! &#x279C not</p>
 
-</body>
-</html>
+    <?php require('includes/footer.php'); ?>

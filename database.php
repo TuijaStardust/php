@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Database connection</title>
-</head>
-<body>
-    <h1>Working with a Database</h1>
+<?php
+ 
+ $pagetitle = "PHP - Database connection";
+ $creation_date = "2021-01-28";
+ $edit_date = "2021-01-30";
+ 
+ require('includes/header.php');
+         
+ ?> 
 
     <h2>Create a database</h2>
     <p>Make sure MySql => MariaDB open source database is running</p>
@@ -109,7 +109,7 @@ if ($result === false) {
 
         <?php
         
-        // Import the Database info
+        // Import Database connection variables
         require "secret.php";
 
         $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -137,16 +137,13 @@ if ($result === false) {
             <p>Sorry, there are no articles available.</p>
         <?php else: ?>
         <ul>
-            <li>
-                <?php foreach ($articles as $article): ?>
-                    <h2><?php $article['title']; ?></h2>
-                    <p><?php $article['content']; ?></p>
-                <?php endforeach; ?>
-            </li>
+            <?php foreach ($articles as $article): ?>
+                <li>
+                    <h2><?= $article['title']; ?></h2>
+                    <p><?= $article['content']; ?></p>
+                </li>
+            <?php endforeach; ?>
         </ul>
         <?php endif; ?>
     
-    <p></p>
-    <p></p>
-</body>
-</html>
+<?php require('includes/footer.php'); ?>

@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Control Structures</title>
-</head>
-<body>
-    <h1>PHP Control Structures</h1>
-    <p class="date">21-01-24 / Notes by Tuija Stardust</p>
+<?php
+ 
+ $pagetitle = "PHP - Control Structures";
+ $creation_date = "2021-01-24";
+ $edit_date = "2021-01-30";
+ 
+ require('includes/header.php');
+         
+ ?> 
     
     <span>&#x279C <a href="https://www.php.net/manual/en/language.control-structures.php">PHP Manual - Control structures </a>
 
@@ -181,5 +180,4 @@ switch ($variable) {
 
         ?>
 
-</body>
-</html>
+<?php require('includes/footer.php'); ?>
