@@ -13,10 +13,16 @@
 
 <p class="date"><?= $creation_date; ?> / Notes by Tuija Stardust</p>
 
+
 <?php
-if ($edit_date !== null) {
+//if ($edit_date !== null) {
+//    echo "<p class=\"date\">Last edited ".$edit_date."</p>";
+//}
+
+if (isset($edit_date)) {
     echo "<p class=\"date\">Last edited ".$edit_date."</p>";
-}?>
+}
+?>
 
 <hr>
 

@@ -8,7 +8,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) { // <- isset() removes error
 
     $sql = "SELECT * 
             FROM php_dummy_one 
-            WHERE id = " . $_GET['id'];
+            WHERE id = " . $_GET['id']; // Gets the id from URL
 
     $results = mysqli_query($connection, $sql);
 

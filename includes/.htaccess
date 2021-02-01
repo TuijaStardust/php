@@ -1,2 +1,2 @@
-#Deny access from all to server
+#Deny access to files in this folder from any computer
 Deny from all 
