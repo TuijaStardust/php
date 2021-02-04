@@ -2,7 +2,7 @@
  
  $pagetitle = "PHP - Superglobals";
  $creation_date = "2021-02-01";
- //$edit_date = "";
+ $edit_date = "2021-02-04";
  
  require('includes/header.php');
          
@@ -17,4 +17,8 @@
     <p>&#x279C All variables are passed as strings</p>
     <p>Example:<br>URL - tuijastardust.com/index.php<strong>?id=1</strong></p>
     <p>&#x279C Anything that comes after the <strong>?</strong> in URL is accessible using $_GET variable</p>
+
+    <h2>$_POST</h2>
+
+
 <?php require('includes/footer.php'); ?>
