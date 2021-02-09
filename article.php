@@ -1,7 +1,7 @@
 <?php
         
 // Import the Database connection
-require "includes/database_connect.php";
+require 'includes/database_connect.php';
 
 // Avoid SQL injection by making sure the id === numeric 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) { // <- isset() removes error message from being displayed on browser
@@ -40,7 +40,5 @@ require('includes/header.php');
             </article>
         <?php endif; ?> 
 
-    </main>
 
-</body>
-</html>
+<?php require('includes/footer.php'); ?>

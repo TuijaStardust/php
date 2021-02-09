@@ -2,16 +2,19 @@
  
  $pagetitle = "PHP - Database connection";
  $creation_date = "2021-01-28";
- $edit_date = "2021-01-30";
+ $edit_date = "2021-02-09";
  
  require('includes/header.php');
          
  ?> 
 
     <h2>Create a database</h2>
+
     <p>Make sure MySql => MariaDB open source database is running</p>
     <p>Use MariaDB CLI or MySQL interface to create a database</p>
+    
     <h3>Settings</h3>
+
     <ul>
         <li>Create a new database; lowercase, underscores to separate words, descriptive name</li>
         <li>Collation depends of the used character set; Recommendation: utf8mb4_unicode_ci</li>
@@ -38,18 +41,22 @@ published_at (DATETIME, NULL)
     </ul>
 
     <h2>Accessing data in a database with an SQL Query</h2>
+
     <code>SELECT * FROM [table_name];</code>
     <p>* => All; Can be replaced with a specific column_name</p>
     <code>SELECT [column1, column2] FROM [table_name] WHERE condition; </code>
     <p>condition examples: id = 2; title = 'Awesome post' </p>
     <p>A listing of <a href="https://mariadb.com/kb/en/comparison-operators/">SQL comparison operators</a>
+    
     <h3>Index</h3>
+
     <p>Create Indexes on columns that are frequently searched or used for defining order.</p>
     <p>Whenever you use WHERE clause in a query, columns in the WHERE clause need to have an index (So the query searches only that column and not the whole timezone_abbreviations_list)</p>
     <code>SELECT * FROM [table_name] ORDER BY [column1, column2] DESC;</code>
     <p>Default order is ASC; adding DESC to the end reverses the order</p>
 
     <h2>Connecting to Database</h2>
+
     <p>You need to know:
         <ul>
             <li>Host (localhost)</li>
@@ -105,12 +112,22 @@ if ($result === false) {
 </pre>
     <p>MYSQLI_ASSOC turns the resulting array into an associative array</p>
     
+    <h2>Inserting Data Into Database</h2>
+
+    <p>INSERT INTO -SQL statement</p>
+    <code>INSERT INTO table_name (column1, column2) VALUES (value1, value2), (value3, value4); </code>
+    <p>&#x279C Add a value for each column OR the defined columns of the table in the same order as the columns are in the table</p>
+    <p>&#x279C Multiple sets of values can be added simultaneously - separated by <strong>,</strong> (comma)</p>
+    <p>&#x279C NULL can be inserted as a value if NULL is defined as an allowed value in the column...</p>
+
+    <p>Strings and some other types of values need to be enclosed with single quotes <strong>' '</strong><br>
+    &#x279C If the inserted value contains a single quote [example: can't] it needs to be escaped with <strong>\</strong> (backslash) ifront [example: can\'t]</p>
     <hr>
 
         <?php
         
         // Import Database connection variables
-        require "secret.php";
+        require 'includes/secret.php';
 
         $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
