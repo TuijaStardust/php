@@ -2,7 +2,7 @@
  
  $pagetitle = "PHP - Elementary";
  $creation_date = "2021-01-24";
- $edit_date = "2021-01-30";
+ $edit_date = "2021-02-11";
  
  require('includes/header.php');
          
@@ -103,6 +103,17 @@
     <p>phpDocs syntax makes it easier to interpret what functions do<br>
     &#x279C <a href="https://docs.phpdoc.org/latest/guide/getting-started/index.html">phpDocumentor</a>
     </p>
-    <></>
+
+    <h2>HTML Entities - Special Characters</h2>
+    <p>An HTML entity is a piece of text ("string") that begins with <strong>&</strong> (ampersand) and ends with <strong>;</strong> (semicolon).</p>
+    <p>Entities are used to display reserved characters <strong>which would otherwise be interpreted as HTML code</strong>, and invisible characters like non-breaking spaces.</p>
+    <p>Reserved special HTML characters are parsed as HTML code. To display them as text, corresponding character entity must be used. </p>
+    <ul>
+        <li>&amp; &#x279C &amp;amp;</li> <!-- & -->
+        <li>&lt; &#x279C &amp;lt;</li> <!-- < -->
+        <li>&gt; &#x279C &amp;gt;</li> <!-- > -->
+        <li>&quot; &#x279C &amp;quot;</li> <!-- " --> 
+    </ul>
+    <p>&#x279C <a href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">Updated list of HTML named characters</a></p>
 
     <?php require('includes/footer.php'); ?>

@@ -2,7 +2,7 @@
 
 $pagetitle = "PHP - Security Issues";
 $creation_date = "2021-02-09";
-// $edit_date = "2021-02-09";
+$edit_date = "2021-02-11";
 
 require 'includes/header.php';
 ?>
@@ -67,4 +67,15 @@ require 'includes/header.php';
             <li><code>mysqli_stmt_execute($stmt);</code></li>
             <li>Return value: true / false</li>
         </ul>
+
+    <h2>Avoiding "Cross-site Scripting"</h2>
+
+    <p>When user adds data into input fields, HTML reserved characters need to be transformed into <strong>HTML entities</strong>. By doing this it is made sure that any code placed in the input field is transformed into plain text that can't be run as code.</p>
+    
+    <h3>htmlspecialchars()</h3>
+    <p>Converts HTML special characters into HTML entities.<br>
+    &#x279C <strong>Use whenever a value from a form input field needs to printed out.</strong></p>
+    <p>Wrap form input value fields (insert data to database) AND content displaying fields (print out data from database) inside this function.</p>
+    <p>Example: <code>echo htmlspecialchars($title); </code></p>
+
 <?php require 'includes/footer.php'; ?>

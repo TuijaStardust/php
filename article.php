@@ -31,7 +31,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) { // <- isset() removes error
 
 $pagetitle = "Blog Mockup";
 $creation_date = "2021-01-24";
-$edit_date = "2021-01-30";
+$edit_date = "2021-02-11";
 
 require('includes/header.php');
 
@@ -41,8 +41,8 @@ require('includes/header.php');
             <p>Sorry, the article isn't available.</p>
         <?php else: ?>
             <article>
-                <h2> <?= $article['title']; ?></h2> 
-                <p> <?= $article['content']; ?></p>
+                <h2> <?= htmlspecialchars($article['title']); ?></h2> 
+                <p> <?= htmlspecialchars($article['content']); ?></p>
             </article>
         <?php endif; ?> 
 

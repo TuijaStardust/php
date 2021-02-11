@@ -29,16 +29,19 @@ $edit_date = "2021-02-11";
 require('includes/header.php');
         
 ?> 
-
+    <div><a href="new_article_function.php">&#x279C Add New Article</a></div>
+    
     <?php if (empty($articles)): ?>
-        <p>Sorry, there are no articles available.</p>
+        <>Sorry, there are no articles available.</>
     <?php else: ?>
         <div>
             <ul>
             <?php foreach ($articles as $article): ?>
                 <li>
-                    <h2><a href="article.php?id=<?= $article['id']; ?>"> <?= $article['title']; ?></a></h2> 
-                    <p> <?= $article['content']; ?></p>
+                    <!-- ALWAYS escape HTML special characters when the displayed content is originally inserted as user input -->
+                    <h2><a href="article.php?id=<?= $article['id']; ?>"> <?= htmlspecialchars($article['title']); ?></a></h2> 
+                    <p> <?= htmlspecialchars($article['content']); ?></p>
+                    <p> <?= htmlspecialchars($article['published_at']); ?> </p>
                 </li>
             <?php endforeach; ?>
             </ul>

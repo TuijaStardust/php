@@ -1,8 +1,8 @@
 <?php
  
  $pagetitle = "PHP - HTML Forms & Validation";
- $creation_date = "2021-04-01";
- //$edit_date = "";
+ $creation_date = "2021-01-24";
+ $edit_date ="2021-02-11";
  
 require('includes/header.php');
          
@@ -231,7 +231,9 @@ require('includes/header.php');
     <h2>Validation</h2>
     <p>Input fields have validation rules for the values that are entered into the fields<br>
     &#x279C if the entered values don't match the fields value types, the form can't be sent and the browser gives a validation error message.
-    <p>An empty value is accepted as valid unless the input field has <strong>required</strong> attribute.</p>
+    <p>An empty value is accepted as valid unless the input field has <strong>required</strong> attribute.<br>
+    &#x279C Client-side validation can be bypassed and <strong>server-side validation must always be done!</strong>
+    </p>
     <p>A certain pattern for valid value can be specified with <strong>pattern=""</strong> attribute<br>
         <ul>
             <li><a href="https://www.html5pattern.com/">A listing of commonly used regular expression patterns</a></li>
@@ -243,6 +245,32 @@ require('includes/header.php');
     <p>Adding <strong>novalidate</strong> attribute to the form element disables the automatic validation<br>
     &#x279C input type mobile features are <strong>not</strong> disabled</p>
 
+    <h3>Datetime validation</h3>
+    <p>date_create_from_format() function</p>
+    <p>Parses a time string according to a specific format<br>
+    &#x279C Format string consist of <a href="https://www.php.net/manual/en/datetime.createfromformat.php">datetime formatting characters</a><br>
+    &#x279C Format string is passed as an argument</p>
+
+    <h2>Redirecting</h2>
+
+    <p>It is common to redirect to another page after submitting form successfully / inserting data to database etc.</p>
+    
+<pre>
+         get example.com/page1.php 
+ |   --------------------------------------->   |
+ |                                              |
+ |       redirect to example.com/page2.php      |S
+U|   <---------------------------------------   |E
+S|                                              |R
+E|       get example.com/page2.php              |V
+R|   --------------------------------------->   |E
+ |                                              |R
+ |       HTML (source page2.php)                |
+ |   <---------------------------------------   |
+</pre>
+    <h3>header('url'); exit;</h3>
+    <p>&#x279C use header function to redirect to another url</p>
+    <p>&#x279C it is good practise to use exit; to stop the script, as none of the following code of the script is needed to run.</p> 
     <hr>
 
     <h2>Sample form</h2>

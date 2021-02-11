@@ -2,7 +2,7 @@
  
  $pagetitle = "PHP - Methods";
  $creation_date = "2021-01-24";
- $edit_date = "2021-02-01";
+ $edit_date = "2021-02-11";
  
  require('includes/header.php');
          
@@ -13,6 +13,15 @@
     <ul>
         <li>Print out the details of the variable in the browser; useful to see what variable contains</li>
         <li>Accepts multiple values as arguments, separated with ,(comma)</li>
+    </ul>
+    
+    <h3>die('status'); / exit(); / exit;</h3>
+    <ul>
+        <li>Terminates the execution of the script.</li>
+        <li>exit is a language construct and can be called without parentheses if no status is passed. </li>
+        <li>Arg.) Status <br>
+        &#x279C If status is a string, die/exit function prints the status just before exiting.<br>
+        &#x279C If status is an integer, that value will be used as the exit status and not printed.</li>
     </ul>
 
     <h2>Variable methods</h2>
@@ -89,7 +98,13 @@
         <li>Parameters: A result set identifier / SQL query (mysqli_query())</li>
         <li>Field names returned by this function are case-sensitive</li>
     </ul>
-    <></>
-    <></>
     
+    <h2>Server Methods</h2>
+    <h3>header('Location: https://example.com')</h3>
+    <ul>
+        <li>Used to send (redirect) a raw HTTP header &#x279C Forces the HTTP response code to the specified value.</li>
+        <li><strong>header()</strong> must be called before any actual output is sent!!! &#x279C (HTML, include/require, functions, spaces, empty lines)</li>
+        <li><a href="https://www.php.net/manual/en/function.header">PHP Manual - header</a></li>
+    </ul>
+
     <?php require('includes/footer.php'); ?>

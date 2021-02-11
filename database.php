@@ -2,7 +2,7 @@
  
  $pagetitle = "PHP - Database connection";
  $creation_date = "2021-01-28";
- $edit_date = "2021-02-09";
+ $edit_date = "2021-02-11";
  
  require('includes/header.php');
          
@@ -122,7 +122,6 @@ if ($result === false) {
 
     <p>Strings and some other types of values need to be enclosed with single quotes <strong>' '</strong><br>
     &#x279C If the inserted value contains a single quote [example: can't] it needs to be escaped with <strong>\</strong> (backslash) ifront [example: can\'t]</p>
-    <hr>
 
 
 <?php require 'includes/footer.php'; ?>

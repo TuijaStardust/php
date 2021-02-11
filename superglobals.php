@@ -2,7 +2,7 @@
  
  $pagetitle = "PHP - Superglobals";
  $creation_date = "2021-02-01";
- $edit_date = "2021-02-09";
+ $edit_date = "2021-02-11";
  
  require('includes/header.php');
          
@@ -32,6 +32,20 @@
             <li>'DOCUMENT_ROOT' &#x279C The document root directory under which the current script is executing, as defined in the server's config file</li>
         </ul>
     </p>
+    <p>Standard way of checking wheter server is using http or https protocol:
+<pre>
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+        $protocol = 'https';
+    } else {
+        $protocol = 'http';
+    }
+
+</pre>
+    </p>
+    <p>Example syntax:<br>
+    <code>header("Location: $protocol://" . $_SERVER['HTTP_HOST'] . "article.php?id=$id"); exit;</code>
+    </p>
+
     <p>&#x279C <a href="https://www.php.net/manual/en/reserved.variables.server.php">PHP Manual - $_SERVER</a></p>
 
 

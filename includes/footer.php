@@ -10,7 +10,7 @@
             <li><a href="arrays.php">Arrays</a></li>
             <li><a href="loops.php">Loops</a></li>
             <li><a href="functions.php">Functions</a></li>
-            <li><a href="php_methods">Some common & useful PHP methods</a></li>
+            <li><a href="php_methods.php">Some common & useful PHP methods</a></li>
             <li><a href="superglobals.php">$_SUPERGLOBALS</a></li>
             <li><a href="database.php">Connecting to database - procedural</a></li>
             <li><a href="database_functions.php">Connecting to database - function</a></li>
