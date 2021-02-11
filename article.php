@@ -1,7 +1,13 @@
 <?php
-        
+
+// *DEPRECATED*
 // Import the Database connection
 require 'includes/database_connect.php';
+
+// Import Database connection function and assign it to a variable
+require 'includes/db_connect_function.php';
+
+$connection = getDB();
 
 // Avoid SQL injection by making sure the id === numeric 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) { // <- isset() removes error message from being displayed on browser

@@ -1,7 +1,14 @@
 <?php
         
+// *DEPRECATED* 
 // Import the Database connection
-require "includes/database_connect.php";
+// require "includes/database_connect.php";
+
+// Import Database Connection function
+require "includes/db_connect_function.php";
+
+// Assign the database connection variale that is called whenever needed
+$connection = getDB();
 
 $sql = "SELECT * 
         FROM php_dummy_one 
@@ -17,7 +24,7 @@ if ($results === false) {
 
 $pagetitle = "Blog Mockup";
 $creation_date = "2021-01-24";
-$edit_date = "2021-02-01";
+$edit_date = "2021-02-11";
 
 require('includes/header.php');
         

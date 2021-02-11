@@ -4,7 +4,7 @@ $pagetitle = "PHP - Arrays";
 $creation_date = "2021-01-24";
 $edit_date = "2021-01-30";
 
-require('includes/header.php');
+require 'includes/header.php';
         
 ?>        
 
@@ -75,5 +75,5 @@ $articles = [
 
 <?php 
 
-require('includes/footer.php')
+require 'includes/footer.php';
 ?>

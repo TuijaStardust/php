@@ -1,4 +1,7 @@
 <?php        
+
+        // *DEPRECATED*
+
         // Import the Database info
         require "includes/secret.php";
 
@@ -9,5 +12,3 @@
             echo mysqli_connect_error();
             exit;
         }
-
-        

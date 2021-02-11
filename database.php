@@ -124,43 +124,5 @@ if ($result === false) {
     &#x279C If the inserted value contains a single quote [example: can't] it needs to be escaped with <strong>\</strong> (backslash) ifront [example: can\'t]</p>
     <hr>
 
-        <?php
-        
-        // Import Database connection variables
-        require 'includes/secret.php';
 
-        $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-        if (mysqli_connect_error()) {
-            echo mysqli_connect_error();
-            exit;
-        }
-
-        echo "Connected to the database succefully.";
-
-        $sql = "SELECT * FROM php_dummy_one ORDER BY title;";
-
-        $results = mysqli_query($connection, $sql);
-
-        if ($results === false) {
-            echo mysqli_error($connection);
-        }   else {
-            $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-        }
-        ?>
-         
-
-        <?php if (empty($articles)): ?>
-            <p>Sorry, there are no articles available.</p>
-        <?php else: ?>
-        <ul>
-            <?php foreach ($articles as $article): ?>
-                <li>
-                    <h2><?= $article['title']; ?></h2>
-                    <p><?= $article['content']; ?></p>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
-    
-<?php require('includes/footer.php'); ?>
+<?php require 'includes/footer.php'; ?>

@@ -17,6 +17,7 @@
     <p>&#x279C All variables are passed as strings</p>
     <p>Example:<br>URL - tuijastardust.com/index.php<strong>?id=1</strong></p>
     <p>&#x279C Anything that comes after the <strong>?</strong> in URL is accessible using $_GET variable</p>
+    <p><a href="querystring.php">Test it: &#x279C SQL querystring</a></p>
 
     <h2>$_POST</h2>
     <p><strong>An associative array</strong> of variables passed to the current script via the HTTP POST method for standard web forms</p>

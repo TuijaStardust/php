@@ -99,4 +99,10 @@
     <p>|| &#x279C or </p>
     <p>! &#x279C not</p>
 
+    <h2>Comments</h2>
+    <p>phpDocs syntax makes it easier to interpret what functions do<br>
+    &#x279C <a href="https://docs.phpdoc.org/latest/guide/getting-started/index.html">phpDocumentor</a>
+    </p>
+    <></>
+
     <?php require('includes/footer.php'); ?>

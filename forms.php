@@ -1,6 +1,6 @@
 <?php
  
- $pagetitle = "PHP - HTML forms";
+ $pagetitle = "PHP - HTML Forms & Validation";
  $creation_date = "2021-04-01";
  //$edit_date = "";
  
